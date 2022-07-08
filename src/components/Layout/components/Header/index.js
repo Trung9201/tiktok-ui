@@ -4,14 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleQuestion,
   faCircleXmark,
-  faCloudUpload,
   faCoins,
   faEarthAsia,
   faEllipsisVertical,
   faGear,
   faKeyboard,
   faMagnifyingGlass,
-  faMessage,
   faSignOut,
   faSpinner,
   faUser,
@@ -27,6 +25,8 @@ import images from "~/assets/images";
 import { Wrapper as PopperWrapper } from "~/components/Popper";
 import AccountItem from "~/components/AccountItem";
 import Menu from "~/components/Popper/Menu";
+import { MessageIcon, UploadIcon } from "~/components/Icons";
+import Image from "~/components/Image";
 
 const cx = classNames.bind(styles);
 
@@ -146,11 +146,11 @@ function Header() {
             <>
               <Tippy delay={[0, 200]} content="Upload Video" placement="bottom">
                 <button className={cx("action-btn")}>
-                  <FontAwesomeIcon icon={faCloudUpload} />
+                  <UploadIcon />
                 </button>
               </Tippy>
               <button className={cx("action-btn")}>
-                <FontAwesomeIcon icon={faMessage} />
+                <MessageIcon />
               </button>
             </>
           ) : (
@@ -164,7 +164,7 @@ function Header() {
             onChange={handleMenuChange}
           >
             {currentUser ? (
-              <img
+              <Image
                 className={cx("user-avatar")}
                 alt="Nguyen Quoc Trung"
                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-aiso/e3f8d39ce4d0b8446e5f62ab31347daa~c5_100x100.jpeg?x-expires=1657198800&x-signature=L%2FYqa5lhICccJVaQ0crn5J4k6KI%3D"
